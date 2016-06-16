@@ -5,6 +5,10 @@ import java.util.Scanner;
 
 public class GreatestCommonDivisor {
   
+  /*
+   * Prints the greatest common divisor of two entered integers
+   */
+  
   public static void main(String[] args) {
     
     Scanner scanner = new Scanner(System.in);
@@ -16,12 +20,15 @@ public class GreatestCommonDivisor {
       num2 = scanner.nextInt();
       System.out.println(getGreatestCommonDivisor(num1, num2));
     }
-    catch (InputMismatchException e) {
-      System.out.println("Bitte nur ganzzahlige Werte eingeben.");
+    catch (InputMismatchException e) {  // if non-integers are passed to scanner
+      System.out.println("Please enter integers only.");
     }
     
   }
   
+  /*
+   * Calculates the greatest common divisor
+   */
   static int getGreatestCommonDivisor(int num1, int num2) {
     
     int rest1 = (num1 > num2) ? num2 : num1; // smaller number (later the larger rest)
