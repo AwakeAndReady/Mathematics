@@ -1,24 +1,33 @@
 package de.renesesgoer.mathematics;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class PrimeFactors {
   
+  /*
+   * Prints the prime factors of an entered long value
+   */
+  
   public static void main(String[] args) {
     
+    Scanner scanner = new Scanner(System.in);
     long number = 480L;
-    long number2 = 12600L;
-    System.out.println(number);
-    System.out.println("Primfaktoren:" + getPrimeFactors(number));
-    System.out.println("Primfaktoren:" + getPrimeFactors(number2));
-    System.out.println("ggT: " + getggT(number, number2));
+    
+    try {
+      scanner.nextInt();
+      System.out.println("Primfaktoren:" + getPrimeFactors(number));
+    }
+    catch (InputMismatchException e) {  // if input passed to scanner is not a long value
+      System.out.println("Please enter integers only.");
+    }
     
   }
   
-  static long getggT(long number, long number2) {
-    
-    return 0;
-  }
+  /*
+   * Returnes an ArrayList with the prime factors of the long value
+   */
   
   static ArrayList<Long> getPrimeFactors(long number) {
     long prime = 2L;
